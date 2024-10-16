@@ -2,11 +2,11 @@ import React from 'react';
 
 import html from "../../public/html.png";
 import css from "../../public/css.jpg";
-import java from "../../public/java.png";
+import mongodb from "../../public/mongodb.jpg";
 import javascript from "../../public/javascript.png";
-import oracle from "../../public/oracle.png";
-import spring from "../../public/spring.png";
-import springBoot from "../../public/springBoot.jpg";
+import node from "../../public/node.png";
+import reactjs from "../../public/reactjs.png";
+import express from "../../public/express.png";
 
 
 function Experience() {
@@ -23,8 +23,8 @@ function Experience() {
         },
         {
             id: 3,
-            logo: java,
-            name: "Java",
+            logo: mongodb,
+            name: "MongoDB",
         },
         {
             id: 4,
@@ -33,18 +33,18 @@ function Experience() {
         },
         {
             id: 5,
-            logo: oracle,
-            name: "Oracle",
+            logo: node,
+            name: "node",
         },
         {
             id: 6,
-            logo: spring,
-            name: "Spring",
+            logo: reactjs,
+            name: "reactjs",
         },
         {
             id: 7,
-            logo: springBoot,
-            name: "Spring Boot",
+            logo: express,
+            name: "express",
         },
     ];
 

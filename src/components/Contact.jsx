@@ -52,7 +52,7 @@ function Contact() {
     return (
         <>
             <div name="Contact" className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-16'>
-                <h1 className='text-3xl mb-4 font-bold'>Contact me</h1>
+                <h1 className='text-3xl mb-4 font-bold'>Contact <span className='text-red-700'>me</span> </h1>
                 <span>Please fill out the form below to contact me</span>
                 <div className='flex flex-col items-center justify-center mt-5'>
                     <form onSubmit={handleSubmit(handleSubmitButton)} className='bg-slate-200 w-96 px-8 py-6 rounded-xl'>

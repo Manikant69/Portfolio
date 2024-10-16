@@ -1,7 +1,5 @@
 import React from 'react';
 
-import java from "../../public/java.png";
-import python from "../../public/python.webp";
 import mongoDB from "../../public/mongodb.jpg";
 import express from "../../public/express.png";
 import reactjs from "../../public/reactjs.png";
@@ -34,13 +32,8 @@ function Portfolio() {
         },
         {
           id: 5,
-          logo: python,
-          name: "Python",
-        },
-        {
-          id: 6,
-          logo: java,
-          name: "Java",
+          logo: mongoDB,
+          name: "mongoDB",
         },
       ];
 
