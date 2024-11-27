@@ -1,6 +1,6 @@
 import React from 'react';
 
-import pic from "../../public/my photo.jpg";
+import pic from "/my photo.jpg";
 
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";

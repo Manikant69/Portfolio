@@ -1,12 +1,13 @@
 import React from 'react';
 
-import html from "../../public/html.png";
-import css from "../../public/css.jpg";
-import mongodb from "../../public/mongodb.jpg";
-import javascript from "../../public/javascript.png";
-import node from "../../public/node.png";
-import reactjs from "../../public/reactjs.png";
-import express from "../../public/express.png";
+import html from "/html.png";
+import css from "/css.jpg";
+import mongodb from "/mongodb.jpg";
+import javascript from "/javascript.png";
+import node from "/node.png";
+import reactjs from "/reactjs.png";
+import express from "/express.png";
+import tailwind from "/tailwind.png";
 
 
 function Experience() {
@@ -23,28 +24,33 @@ function Experience() {
         },
         {
             id: 3,
-            logo: mongodb,
-            name: "MongoDB",
-        },
-        {
-            id: 4,
             logo: javascript,
             name: "JavaScript",
         },
         {
+            id: 4,
+            logo: tailwind,
+            name: "Tailwind",
+        },
+        {
             id: 5,
             logo: node,
-            name: "node",
+            name: "Node",
         },
         {
             id: 6,
             logo: reactjs,
-            name: "reactjs",
+            name: "ReactJs",
         },
         {
             id: 7,
             logo: express,
-            name: "express",
+            name: "Express",
+        },
+        {
+            id: 8,
+            logo: mongodb,
+            name: "MongoDB",
         },
     ];
 
@@ -59,9 +65,9 @@ function Experience() {
                 <div className='grid grid-cols-2 md:grid-cols-3  lg:grid-cols-5 gap-7 my-3'>
                     {cardItem.map(({ id, logo, name }) => (
                         <div key={id} className='flex flex-col items-center justify-center rounded-full md:w-[200px] md:h-[200px] p-1 cursor-pointer hover:scale-110 duration-300 border-[2px] '>
-                            <img src={logo} alt="" className=' w-[150px] rounded-full' />
+                            <img src={logo} alt="" className=' w-[130px] rounded-full' />
                             <div>
-                                <div>{name}</div>
+                                <div className='pt-[5px]'>{name}</div>
                             </div>
                         </div>
                     ))}
