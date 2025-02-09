@@ -4,16 +4,16 @@ import ProjectCard from './ProjectCard.jsx';
 const projects = [
   {
     title: 'JobWay',
-    description: 'A full-featured admin dashboard with real-time analytics, inventory management, and order processing capabilities.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3',
+    description: 'JobWay is a MERN-based job portal enabling recruiters to post jobs and candidates to apply, featuring JWT authentication, Redux Toolkit, and a modern shadcn/ui interface.',
+    image: './JobWay.jpg',
     technologies: ['React', 'JavaScript', 'Tailwind CSS', 'Node.js'],
     sourceCode: 'https://github.com/Manikant69/JobWay',
     liveDemo: 'https://job-portal-kzws.onrender.com/',
   },
   {
     title: 'Book Store App',
-    description: 'Smart task management app that uses AI to prioritize and categorize tasks, with real-time collaboration features.',
-    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=2424&ixlib=rb-4.0.3',
+    description: 'Book Store App is a MERN-based platform where users can explore, purchase books, and track unavailable ones. It features authentication, a user-friendly UI, and seamless browsing.',
+    image: './bookStore.jpg',
     technologies: ['React', 'Python', 'TensorFlow', 'PostgreSQL'],
     sourceCode: 'https://github.com/Manikant69/Book-store-app',
     liveDemo: 'https://book-store-app-fr.vercel.app/',
