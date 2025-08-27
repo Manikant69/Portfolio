@@ -5,26 +5,24 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import Projects from './components/Projects';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 import {Toaster} from 'react-hot-toast';
-import Projects from './components/Projects';
 
 export default function App() {
   return (
-    <>
-    <div>
-    <Navbar></Navbar>
-    <Home/>
-    <About/>
-    <Projects/>
-    <Experience/>
-    <Contact/>
-    <Footer/>
-
-    </div>
-
-    <Toaster/>
-
-    </>
+    <ThemeProvider>
+      <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+        <Navbar />
+        <Home />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+      <Toaster />
+    </ThemeProvider>
   ) 
 }

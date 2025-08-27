@@ -3,9 +3,7 @@ import emailjs from '@emailjs/browser';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
 
-
 function Contact() {
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -26,7 +24,6 @@ function Contact() {
             message: message,
         };
 
-
         // Send the email using emailJs 
         emailjs.send(serviceId, templateId, templateParams, publicKey)
             .then((response) => {
@@ -38,75 +35,198 @@ function Contact() {
             .catch((error) => {
                 toast.error('Error sending email', error);
             })
-
     }
 
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm();
 
-
     return (
-        <>
-            <div name="Contact" className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-16'>
-                <h1 className='text-3xl mb-4 font-bold'>Contact <span className='text-red-700'>me</span> </h1>
-                <span>Please fill out the form below to contact me</span>
-                <div className='flex flex-col items-center justify-center mt-5'>
-                    <form onSubmit={handleSubmit(handleSubmitButton)} className='bg-slate-200 w-96 px-8 py-6 rounded-xl'>
-                        <h1 className='text-xl font-semibold mb-4'>Send Your Message</h1>
-                        <div className='flex flex-col mb-4'>
-                            <label className='block text-gray-700'>Full Name</label>
-                            <input
-                                {...register("name", { required: true })} className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="name"
-                                name="name"
-                                type="text"
-                                placeholder="Enter your fullname"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                                  {errors.name && <span>This field is required</span>}
+        <div name="Contact" className='relative min-h-screen py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 overflow-hidden'>
+            
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-xl opacity-20 animate-float"></div>
+                <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-indigo-400 to-blue-600 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-xl opacity-20 animate-float" style={{ animationDelay: '3s' }}></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-purple-400 to-indigo-600 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-xl opacity-15 animate-float" style={{ animationDelay: '1s' }}></div>
+            </div>
 
+            <div className='relative max-w-7xl container mx-auto px-4 md:px-8 lg:px-12'>
+                
+                {/* Hero Header Section */}
+                <div className="text-center mb-20 animate-slideInUp">
+                    <div className="inline-flex items-center gap-2 mb-6">
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-custom"></div>
+                        <span className="px-6 py-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white text-sm font-semibold rounded-full shadow-lg animate-pulse-custom">
+                            💬 Available for Projects
+                        </span>
+                        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse-custom" style={{ animationDelay: '0.5s' }}></div>
+                    </div>
+                    
+                    <h1 className='text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-300 dark:to-purple-300 bg-clip-text text-transparent animate-gradient leading-tight mb-8'>
+                        Contact Me
+                    </h1>
+
+                    {/* Decorative Separator */}
+                    <div className="flex items-center justify-center mb-16 animate-fadeIn" style={{ animationDelay: '600ms' }}>
+                        <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent w-40"></div>
+                        <div className="mx-6 flex space-x-2">
+                            <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce-custom"></div>
+                            <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce-custom" style={{ animationDelay: '0.2s' }}></div>
+                            <div className="w-3 h-3 bg-cyan-500 rounded-full animate-bounce-custom" style={{ animationDelay: '0.4s' }}></div>
                         </div>
-                        <div className='flex flex-col mb-4'>
-                            <label className='block text-gray-700'>Email Address</label>
-                            <input 
-                            {...register("email", { required: true })} 
-                            className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder="Enter your email address"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            {errors.email && <span>This field is required</span>}
+                        <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-40"></div>
+                    </div>
+                </div>
 
+                {/* Main Content Grid */}
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
+                    
+                    {/* Left Column - Contact Info */}
+                    <div className='space-y-8 animate-slideInLeft'>
+                        
+                        {/* Contact Info Cards */}
+                        <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 hover:scale-105'>
+                            <h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center'>
+                                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                                    <span className="text-white text-xl">📧</span>
+                                </div>
+                                Get In Touch
+                            </h2>
+                            
+                            <div className="space-y-6">
+                                <div className="flex items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 group">
+                                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <span className="text-white text-xl">📧</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
+                                        <p className="text-gray-600 dark:text-gray-400">manikantsingh111@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 group">
+                                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <span className="text-white text-xl">📱</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-gray-900 dark:text-white">Phone</h3>
+                                        <p className="text-gray-600 dark:text-gray-400">+91 123 456 7890</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 group">
+                                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                        <span className="text-white text-xl">📍</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-gray-900 dark:text-white">Location</h3>
+                                        <p className="text-gray-600 dark:text-gray-400">Rajasthan, India</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className='flex flex-col mb-4'>
-                            <label className='block text-gray-700'>Message</label>
-                            <textarea 
-                            {...register("message", { required: true })} 
-                            className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="message"
-                                name="message"
-                                type="text"
-                                placeholder="Enter your message here"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                            />
-                                  {errors.message && <span>This field is required</span>}
+                    </div>
 
+                    {/* Right Column - Contact Form */}
+                    <div className='animate-slideInRight'>
+                        <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500'>
+                            <div className="flex items-center mb-8">
+                                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                                    <span className="text-white text-xl">📤</span>
+                                </div>
+                                <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Send Message</h2>
+                            </div>
+
+                            <form onSubmit={handleSubmit(handleSubmitButton)} className='space-y-6'>
+                                
+                                {/* Name Field */}
+                                <div className='animate-slideInLeft' style={{ animationDelay: '400ms' }}>
+                                    <label className='block text-gray-700 dark:text-gray-300 font-medium mb-2 flex items-center'>
+                                        <span className="text-blue-500 mr-2">👤</span>
+                                        Full Name
+                                    </label>
+                                    <input
+                                        {...register("name", { required: "Name is required" })} 
+                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        placeholder="Enter your full name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                    {errors.name && <span className='text-red-500 text-sm mt-1 block animate-bounce-custom'>This field is required</span>}
+                                </div>
+
+                                {/* Email Field */}
+                                <div className='animate-slideInRight' style={{ animationDelay: '600ms' }}>
+                                    <label className='block text-gray-700 dark:text-gray-300 font-medium mb-2 flex items-center'>
+                                        <span className="text-purple-500 mr-2">📧</span>
+                                        Email Address
+                                    </label>
+                                    <input 
+                                        {...register("email", { 
+                                            required: "Email is required",
+                                            pattern: {
+                                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                message: "Invalid email address"
+                                            }
+                                        })} 
+                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600"
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="Enter your email address"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    {errors.email && <span className='text-red-500 text-sm mt-1 block animate-bounce-custom'>{errors.email.message}</span>}
+                                </div>
+
+                                {/* Message Field */}
+                                <div className='animate-slideInLeft' style={{ animationDelay: '800ms' }}>
+                                    <label className='block text-gray-700 dark:text-gray-300 font-medium mb-2 flex items-center'>
+                                        <span className="text-cyan-500 mr-2">💬</span>
+                                        Message
+                                    </label>
+                                    <textarea 
+                                        {...register("message", { 
+                                            required: "Message is required",
+                                            minLength: {
+                                                value: 10,
+                                                message: "Message must be at least 10 characters"
+                                            }
+                                        })} 
+                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-600 resize-none"
+                                        id="message"
+                                        name="message"
+                                        rows="6"
+                                        placeholder="Tell me about your project or just say hello!"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                    />
+                                    {errors.message && <span className='text-red-500 text-sm mt-1 block animate-bounce-custom'>{errors.message.message}</span>}
+                                </div>
+
+                                {/* Submit Button */}
+                                <div className='animate-fadeIn' style={{ animationDelay: '1000ms' }}>
+                                    <button 
+                                        type='submit' 
+                                        className='w-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-600 hover:via-purple-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group'
+                                    >
+                                        <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">📤</span>
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-
-                        <button type='submit' className='bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300'>Send</button>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
