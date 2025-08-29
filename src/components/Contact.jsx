@@ -81,57 +81,9 @@ function Contact() {
                     </div>
                 </div>
 
-                {/* Main Content Grid */}
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
-                    
-                    {/* Left Column - Contact Info */}
-                    <div className='space-y-8 animate-slideInLeft'>
-                        
-                        {/* Contact Info Cards */}
-                        <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 hover:scale-105'>
-                            <h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center'>
-                                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                                    <span className="text-white text-xl">📧</span>
-                                </div>
-                                Get In Touch
-                            </h2>
-                            
-                            <div className="space-y-6">
-                                <div className="flex items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 group">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                                        <span className="text-white text-xl">📧</span>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
-                                        <p className="text-gray-600 dark:text-gray-400">manikantsingh111@gmail.com</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 group">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                                        <span className="text-white text-xl">📱</span>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 dark:text-white">Phone</h3>
-                                        <p className="text-gray-600 dark:text-gray-400">+91 123 456 7890</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 group">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                                        <span className="text-white text-xl">📍</span>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 dark:text-white">Location</h3>
-                                        <p className="text-gray-600 dark:text-gray-400">Rajasthan, India</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Column - Contact Form */}
-                    <div className='animate-slideInRight'>
+                {/* Contact Form */}
+                <div className='max-w-2xl mx-auto'>
+                    <div className='animate-slideInUp'>
                         <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500'>
                             <div className="flex items-center mb-8">
                                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">

@@ -200,9 +200,9 @@ function Experience() {
                             <div className="flex items-center mb-6">
                                 <div className="w-10 h-10 bg-gray-600 dark:bg-gray-500 rounded-lg flex items-center justify-center mr-4">
                                     <span className="text-white text-lg">
-                                        {category.category === "Web Development" ? "�" : 
+                                        {category.category === "Web Development" ? "🌐" : 
                                          category.category === "Programming Languages" ? "💻" :
-                                         category.category === "Tools & Technologies" ? "�️" : "🎯"}
+                                         category.category === "Tools & Technologies" ? "🔧" : "🎯"}
                                     </span>
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">

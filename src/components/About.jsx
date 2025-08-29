@@ -85,57 +85,8 @@ function About() {
           {/* Professional Information - Three Column Layout */}
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch'>
             
-            {/* Education Card */}
+            {/* Coding Achievements Card - Now First */}
             <div className='animate-slideInUp flex' style={{ animationDelay: '100ms' }}>
-              <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] w-full flex flex-col'>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mr-4">
-                    <span className="text-white text-xl">🎓</span>
-                  </div>
-                  <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Education</h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
-                    <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">Bachelor of Technology</h3>
-                    <p className="text-gray-700 dark:text-gray-300">Computer Science & Engineering</p>
-                    <p className="text-gray-600 dark:text-gray-400">Rajasthan Technical University</p>
-                    <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">2021 - 2025</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Skills Card */}
-            <div className='animate-slideInUp flex' style={{ animationDelay: '200ms' }}>
-              <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] w-full flex flex-col'>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
-                    <span className="text-white text-xl">⚡</span>
-                  </div>
-                  <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Core Skills</h2>
-                </div>
-                <div className="flex-grow space-y-3">
-                  {[
-                    'Frontend Development',
-                    'Backend Development', 
-                    'API Development',
-                    'Problem Solving'
-                  ].map((skill, index) => (
-                    <div 
-                      key={skill}
-                      className="flex items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 animate-fadeIn"
-                      style={{ animationDelay: `${600 + index * 100}ms` }}
-                    >
-                      <span className="w-2 h-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mr-3"></span>
-                      <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">{skill}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Coding Achievements Card */}
-            <div className='animate-slideInUp flex' style={{ animationDelay: '300ms' }}>
               <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] w-full flex flex-col'>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center mr-4 animate-pulse-custom">
@@ -264,12 +215,60 @@ function About() {
                 </div>
               </div>
             </div>
+
+            {/* Education Card - Now Second */}
+            <div className='animate-slideInUp flex' style={{ animationDelay: '200ms' }}>
+              <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] w-full flex flex-col'>
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mr-4">
+                    <span className="text-white text-xl">🎓</span>
+                  </div>
+                  <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Education</h2>
+                </div>
+                <div className="flex-grow">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+                    <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">Bachelor of Technology</h3>
+                    <p className="text-gray-700 dark:text-gray-300">Computer Science & Engineering</p>
+                    <p className="text-gray-600 dark:text-gray-400">Rajasthan Technical University</p>
+                    <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">2021 - 2025</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Skills Card - Now Third */}
+            <div className='animate-slideInUp flex' style={{ animationDelay: '300ms' }}>
+              <div className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] w-full flex flex-col'>
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+                    <span className="text-white text-xl">⚡</span>
+                  </div>
+                  <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Core Skills</h2>
+                </div>
+                <div className="flex-grow space-y-3">
+                  {[
+                    'Frontend Development',
+                    'Backend Development', 
+                    'API Development',
+                    'Problem Solving'
+                  ].map((skill, index) => (
+                    <div 
+                      key={skill}
+                      className="flex items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 animate-fadeIn"
+                      style={{ animationDelay: `${600 + index * 100}ms` }}
+                    >
+                      <span className="w-2 h-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mr-3"></span>
+                      <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
 
 export default About;

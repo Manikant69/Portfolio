@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-scroll";
 import pic from "/my photo.jpg";
 
 import { FaSquareFacebook } from "react-icons/fa6";
@@ -77,9 +77,12 @@ function Home() {
 
                             {/* Call to Action Buttons */}
                             <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slideInUp' style={{ animationDelay: '600ms' }}>
-                                <a 
-                                    href="#Project"
-                                    className='group px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1'
+                                <Link 
+                                    to="Project"
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                    className='group px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer'
                                 >
                                     <span className='flex items-center justify-center gap-2'>
                                         View My Work
@@ -87,14 +90,17 @@ function Home() {
                                             <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4m4-4H3' />
                                         </svg>
                                     </span>
-                                </a>
+                                </Link>
                                 
-                                <a 
-                                    href="#Contact"
-                                    className='px-8 py-4 border-2 border-blue-500 dark:border-blue-400 text-blue-500 dark:text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300 hover:scale-105'
+                                <Link 
+                                    to="Contact"
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                    className='px-8 py-4 border-2 border-blue-500 dark:border-blue-400 text-blue-500 dark:text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300 hover:scale-105 cursor-pointer'
                                 >
                                     Get In Touch
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Social Media & Tech Stack */}

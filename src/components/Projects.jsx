@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectCard from './ProjectCard.jsx';
 
 const projects = [
@@ -29,6 +29,19 @@ const projects = [
 ];
 
 const Projects = () => {
+  const [currentProject, setCurrentProject] = useState(0);
+
+  const nextProject = () => {
+    setCurrentProject((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  const goToProject = (index) => {
+    setCurrentProject(index);
+  };
   return (
     <div name="Project" className="relative min-h-screen py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 overflow-hidden">
       
@@ -67,8 +80,8 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+        {/* Projects Grid - Desktop & Tablet */}
+        <div className="hidden md:grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -76,10 +89,6 @@ const Projects = () => {
               style={{ animationDelay: `${600 + index * 200}ms` }}
             >
               <div className="group relative">
-                {/* Card Number Badge */}
-                <div className="absolute -top-4 -left-4 z-10 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full flex items-center justify-center text-sm shadow-lg animate-bounce-custom" style={{ animationDelay: `${index * 0.2}s` }}>
-                  {String(index + 1).padStart(2, '0')}
-                </div>
                 
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10 scale-110"></div>
@@ -88,6 +97,92 @@ const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="md:hidden relative">
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden rounded-2xl mb-8">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentProject * 100}%)` }}
+            >
+              {projects.map((project, index) => (
+                <div key={project.title} className="w-full flex-shrink-0 px-4">
+                  <div className="group relative">
+                    
+                    {/* Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10 scale-110"></div>
+                    
+                    <ProjectCard {...project} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons at Bottom */}
+          <div className="flex justify-center items-center space-x-6 mb-6">
+            <button
+              onClick={prevProject}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              disabled={currentProject === 0}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Current Project Info */}
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
+              <span className="text-lg font-bold text-gray-800 dark:text-white">
+                {currentProject + 1}
+              </span>
+              <span className="text-gray-500 dark:text-gray-400 mx-2">/</span>
+              <span className="text-lg font-bold text-gray-800 dark:text-white">
+                {projects.length}
+              </span>
+            </div>
+            
+            <button
+              onClick={nextProject}
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              disabled={currentProject === projects.length - 1}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Enhanced Pagination Dots */}
+          <div className="flex justify-center space-x-3 mb-4">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToProject(index)}
+                className={`transition-all duration-300 ${
+                  index === currentProject
+                    ? 'w-8 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full scale-125 shadow-lg'
+                    : 'w-3 h-3 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 rounded-full hover:scale-110'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Project Title Display */}
+          <div className="text-center">
+            <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+              {projects[currentProject].title}
+            </h3>
+            <div className="flex justify-center items-center space-x-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                Swipe or use buttons to navigate
+              </span>
+              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}

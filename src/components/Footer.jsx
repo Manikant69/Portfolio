@@ -1,15 +1,13 @@
 import React from 'react'
+import { Link } from "react-scroll";
 
 import {
     FaFacebook,
-    FaTwitter,
     FaInstagram,
     FaLinkedinIn,
     FaGithub,
     FaEnvelope,
-    FaPhone,
     FaMapMarkerAlt,
-    FaCode,
     FaHeart
   } from "react-icons/fa";
 
@@ -40,11 +38,23 @@ function Footer() {
                 <div className='animate-slideInUp' style={{ animationDelay: '200ms' }}>
                     <h4 className='text-lg font-semibold text-gray-900 dark:text-white mb-6 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300'>Quick Links</h4>
                     <ul className='space-y-3'>
-                        {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((link, index) => (
-                            <li key={link} className='animate-fadeIn' style={{ animationDelay: `${300 + index * 100}ms` }}>
-                                <a href={`#${link}`} className='text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105 transform inline-block hover:translate-x-2'>
-                                    {link}
-                                </a>
+                        {[
+                            { name: 'Home', target: 'Home' },
+                            { name: 'About', target: 'About' },
+                            { name: 'Experience', target: 'Experience' },
+                            { name: 'Projects', target: 'Project' },
+                            { name: 'Contact', target: 'Contact' }
+                        ].map((link, index) => (
+                            <li key={link.name} className='animate-fadeIn' style={{ animationDelay: `${300 + index * 100}ms` }}>
+                                <Link 
+                                    to={link.target}
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                    className='text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105 transform inline-block hover:translate-x-2 cursor-pointer'
+                                >
+                                    {link.name}
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -58,7 +68,7 @@ function Footer() {
                     <div className='mb-6'>
                         <div className='flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105 transform'>
                             <FaEnvelope className='animate-bounce-custom flex-shrink-0' style={{ animationDelay: '0s' }} />
-                            <span>manikant@example.com</span>
+                            <span>manikant.dev07@gmail.com</span>
                         </div>
                     </div>
 
@@ -77,9 +87,6 @@ function Footer() {
                             </a>
                             <a href="https://www.instagram.com/mr_manikant_1.5/" target="_blank" rel="noopener noreferrer">
                                 <FaInstagram size={28} className='text-pink-600 dark:text-pink-400 hover:scale-125 transition-all duration-300 hover-glow animate-float cursor-pointer' style={{ animationDelay: '0.6s' }}/>
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                                <FaTwitter size={28} className='text-blue-400 dark:text-blue-300 hover:scale-125 transition-all duration-300 hover-glow animate-float cursor-pointer' style={{ animationDelay: '0.8s' }}/>
                             </a>
                         </div>
                     </div>

@@ -30,11 +30,6 @@ const ProjectCard = ({
           alt={title}
           className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110"
         />
-        
-        {/* Floating Action Hint */}
-        <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0 z-20">
-          <ExternalLink size={16} className="text-blue-500 animate-pulse-custom" />
-        </div>
       </div>
 
       {/* Content Container */}
