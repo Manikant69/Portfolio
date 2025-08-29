@@ -5,7 +5,6 @@ import pic from "/my photo.jpg";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
-import { FaTelegram } from "react-icons/fa6";
 
 import { SiMongodb } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
@@ -53,12 +52,12 @@ function Home() {
                                 <div className='flex items-center justify-center lg:justify-start space-x-3 text-2xl lg:text-4xl font-semibold'>
                                     <span className='text-gray-700 dark:text-gray-300'>I'm a</span>
                                     <ReactTyped
-                                        className='text-blue-600 dark:text-blue-400 font-bold'
+                                        className='text-indigo-600 dark:text-indigo-400 font-bold'
                                         strings={[
-                                            "Full Stack Developer",
-                                            "React Specialist", 
-                                            "MERN Expert",
-                                            "Problem Solver"
+                                            "Software Developer",
+                                            "Backend Specialist", 
+                                            "Competitive Programmer",
+                                            "Coding Enthusiast"
                                         ]}
                                         typeSpeed={50}
                                         backSpeed={30}
@@ -87,7 +86,7 @@ function Home() {
                                     <span className='flex items-center justify-center gap-2'>
                                         View My Work
                                         <svg className='w-5 h-5 transition-transform group-hover:translate-x-1' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4m4-4H3' />
+                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 8l4 4m0 0l-4 4oding Enthusiastm4-4H3' />
                                         </svg>
                                     </span>
                                 </Link>
@@ -114,7 +113,6 @@ function Home() {
                                             { Icon: FaLinkedin, href: "https://www.linkedin.com/in/manikant69/", color: "text-blue-600 dark:text-blue-400", delay: "0s" },
                                             { Icon: FaSquareFacebook, href: "https://www.facebook.com/manikant.singh.1272/", color: "text-blue-700 dark:text-blue-500", delay: "0.1s" },
                                             { Icon: FaSquareInstagram, href: "https://www.instagram.com/mr_manikant_1.5/", color: "text-pink-600 dark:text-pink-400", delay: "0.2s" },
-                                            { Icon: FaTelegram, href: "https://www.telegram.com", color: "text-blue-500 dark:text-blue-400", delay: "0.3s" }
                                         ].map(({ Icon, href, color, delay }, index) => (
                                             <a 
                                                 key={index}
@@ -172,10 +170,10 @@ function Home() {
                                 </div>
                                 
                                 {/* Floating Elements */}
-                                <div className='absolute top-10 -right-10 w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-xl animate-bounce-custom'>
+                                <div className='absolute top-7 -right-10 w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-xl animate-bounce-custom'>
                                     💻
                                 </div>
-                                <div className='absolute bottom-10 -left-10 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold shadow-xl animate-bounce-custom' style={{ animationDelay: '1s' }}>
+                                <div className='absolute bottom-2 -left-10 w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold shadow-xl animate-bounce-custom' style={{ animationDelay: '1.5s' }}>
                                     🚀
                                 </div>
                             </div>
