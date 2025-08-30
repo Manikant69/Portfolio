@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import pic from "/photo.avif";
+import pic from "/my photo.jpg";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
 import { BsSun, BsMoon } from "react-icons/bs";
