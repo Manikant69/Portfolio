@@ -54,7 +54,7 @@ function Footer() {
                                     className='text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105 transform inline-block hover:translate-x-2 cursor-pointer'
                                 >
                                     {link.name}
-                                </Link>
+                                </Link
                             </li>
                         ))}
                     </ul>
@@ -85,7 +85,7 @@ function Footer() {
                             <a href="https://github.com/Manikant69" target="_blank" rel="noopener noreferrer">
                                 <FaGithub size={28} className='text-gray-800 dark:text-gray-300 hover:scale-125 transition-all duration-300 hover-glow animate-float cursor-pointer' style={{ animationDelay: '0.4s' }}/>
                             </a>
-                            <a href="https://www.instagram.com/mr_manikant_1.5/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/er_manikant_1.5/" target="_blank" rel="noopener noreferrer">
                                 <FaInstagram size={28} className='text-pink-600 dark:text-pink-400 hover:scale-125 transition-all duration-300 hover-glow animate-float cursor-pointer' style={{ animationDelay: '0.6s' }}/>
                             </a>
                         </div>
