@@ -54,7 +54,7 @@ function Footer() {
                                     className='text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105 transform inline-block hover:translate-x-2 cursor-pointer'
                                 >
                                     {link.name}
-                                </Link
+                                </Link>
                             </li>
                         ))}
                     </ul>
