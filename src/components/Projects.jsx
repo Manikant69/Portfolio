@@ -16,7 +16,7 @@ const projects = [
     image: './bookStore.jpg',
     technologies: ['React', 'Python', 'TensorFlow', 'PostgreSQL'],
     sourceCode: 'https://github.com/Manikant69/Book-store-app',
-    liveDemo: 'https://book-store-app-fr.vercel.app/',
+    liveDemo: 'https://bookspot-mk.vercel.app/',
   },
   {
     title: 'Social Media Analytics',
