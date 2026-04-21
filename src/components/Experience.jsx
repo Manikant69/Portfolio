@@ -69,7 +69,7 @@ function Experience() {
                                     <span className="text-white text-lg">💼</span>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Backend Developer Intern</h3>
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">Backend Developer</h3>
                                     <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">Fonix Technologies</p>
                                     <p className="text-gray-600 dark:text-gray-400">May 2024 - Present</p>
                                 </div>
